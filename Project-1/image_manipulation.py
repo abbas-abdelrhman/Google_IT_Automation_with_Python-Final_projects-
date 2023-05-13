@@ -1,4 +1,12 @@
+import os
+from pathlib import Path
 from PIL import Image
-im = Image.open("original_images/img-num-1.jpg")
-new_im = im.resize((640,480))
-new_im.save("modified_images/modif_img1.jpg")
+
+for img in os.listdir('original_images'):
+    f = Path(f'images/{img}').stem
+    outfile = f + ".jpg"
+    try:
+        original_img = Image.open(f"original_images/{img}")
+        modified_im = original_img.rotate(90).resize((128, 128)).convert('RGB').save(f"modified_images/{outfile}")
+    except:
+        pass
