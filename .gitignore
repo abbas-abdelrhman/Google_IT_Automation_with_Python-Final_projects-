@@ -37,5 +37,5 @@ ehthumbs.db
 Thumbs.db
 
 # Specific files & dircetories
-/.idea
-/venv
+/.idea/
+/venv/
