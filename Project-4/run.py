@@ -22,7 +22,7 @@ def text2dict(data, file_name):
 
 
 def send_requests(data):
-    url = "http://35.232.111.167/fruits/"
+    url = "http://34.135.227.3/fruits/"
     response = requests.post(
         url=url,
         data=data)
@@ -31,9 +31,6 @@ def send_requests(data):
 
 
 if __name__ == "__main__":
-    # for file in os.listdir('feedkack'):
-    #     print(os.path.splitext(file)[0])
-
     for file in os.listdir('supplier-data/descriptions'):
         if os.path.isfile('supplier-data/descriptions/' + file):
             send_requests(text2dict(readfiles('supplier-data/descriptions/' + file), os.path.splitext(file)[0]))
